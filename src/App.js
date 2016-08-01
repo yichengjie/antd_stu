@@ -33,20 +33,28 @@ export class App extends Component {
   constructor(props){
     super(props) ;
     this.state = {
-        date:''
+        date:'',
+        text:''
     } ;
   }
   handleChange(date){
     message.info('你选择的日期是 : ' + date.toString()) ;
     this.setState({date}) ;
   }
+  handleInputName (e){
+    var value = e.target.value;
+    this.setState({text:value}) ;
+    console.info(value) ;
+  }
   render() {
     return (
       <div>
-        <Counter increment={1} color={NICE} />
-        <Counter increment={5} color={SUPER_NICE} />
-        <DatePicker onChange = {value => this.handleChange(value)} />
-        <div style={{ marginTop: 20 }}>当前日期：{this.state.date.toString()}</div>
+        <Counter increment={1} color={NICE} /><br/>
+        <Counter increment={5} color={SUPER_NICE} /><br/>
+        <DatePicker onChange = {value => this.handleChange(value)} /><br/>
+        <DatePicker onChange = {value => this.handleChange(value)} /><br/>
+        <input onChange = {this.handleInputName.bind(this)} /><br/>
+        <div style={{ marginTop: 20 }}>当前日期：{this.state.text}</div>
       </div>
     );
   }

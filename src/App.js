@@ -1,34 +1,16 @@
 import React, { Component } from 'react';
-import { NICE, SUPER_NICE } from './colors';
-import { DatePicker,message } from 'antd';
+import { NICE, SUPER_NICE } from './components/colors';
+import Counter from './components/Counter' ;
+import InlineForm from './components/InlineForm' ;
+import CommonForm from './components/CommonForm' ;
+import DemoForm3 from './components/DemoForm3' ;
+import DemoForm4 from './components/DemoForm4' ;
+import DemoForm5 from './components/DemoForm5' ;
+import DemoForm6 from './components/DemoForm6' ;
+import DemoForm7 from './components/DemoForm7' ;
+import DemoForm8 from './components/DemoForm8' ;
+
 //import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
-
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0 };
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-
-  tick() {
-    this.setState({
-      counter: this.state.counter + this.props.increment
-    });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    return (
-      <h1 style={{ color: this.props.color }}>
-        Counter ({this.props.increment}): {this.state.counter}
-      </h1>
-    );
-  }
-}
-
 export class App extends Component {
   constructor(props){
     super(props) ;
@@ -50,11 +32,8 @@ export class App extends Component {
     return (
       <div>
         <Counter increment={1} color={NICE} /><br/>
-        <Counter increment={5} color={SUPER_NICE} /><br/>
-        <DatePicker onChange = {value => this.handleChange(value)} /><br/>
-        <DatePicker onChange = {value => this.handleChange(value)} /><br/>
-        <input onChange = {this.handleInputName.bind(this)} /><br/>
-        <div style={{ marginTop: 20 }}>当前日期：{this.state.text}</div>
+        <Counter increment={5} color={SUPER_NICE} />
+        <DemoForm8/>
       </div>
     );
   }

@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import { NICE, SUPER_NICE } from './colors';
-import Counter from './counter.js' ;
+import { NICE, SUPER_NICE } from './components/colors';
 import Demo01 from './demo01.js' ;
-//import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
+import Counter from './components/Counter' ;
+import InlineForm from './components/InlineForm' ;
+import CommonForm from './components/CommonForm' ;
+import DemoForm3 from './components/DemoForm3' ;
+import DemoForm4 from './components/DemoForm4' ;
+import DemoForm5 from './components/DemoForm5' ;
+import DemoForm6 from './components/DemoForm6' ;
+import DemoForm7 from './components/DemoForm7' ;
+import DemoForm8 from './components/DemoForm8' ;
 
 export class App extends Component {
   constructor(props){
@@ -11,11 +18,11 @@ export class App extends Component {
 
   render() {
     return (
-        <div>
-          <Counter increment={1} color={NICE} />
-          <Counter increment={5} color={SUPER_NICE} />
-          <Demo01 />
-        </div>
+      <div>
+        <Counter increment={1} color={NICE} /><br/>
+        <Counter increment={5} color={SUPER_NICE} />
+        <DemoForm8/>
+      </div>
     );
   }
 }

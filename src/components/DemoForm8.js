@@ -1,5 +1,5 @@
 import React from 'react' ;
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input} from 'antd';
 const createForm = Form.create;
 const FormItem = Form.Item;
 
@@ -8,7 +8,7 @@ function noop() {
 }
 
 let BasicDemo = React.createClass({
-  
+
   handleReset(e) {
     e.preventDefault();
     this.props.form.resetFields();
@@ -22,7 +22,7 @@ let BasicDemo = React.createClass({
         return;
       }
       console.log('Submit!!!');
-      console.log(values);
+      console.log('values' , values);
     });
   },
 
@@ -102,8 +102,9 @@ let BasicDemo = React.createClass({
       labelCol: { span: 7 },
       wrapperCol: { span: 12 },
     };
+
     return (
-      <Form horizontal form={this.props.form}>
+      <Form horizontal>
         <FormItem
           {...formItemLayout}
           label="用户名"
